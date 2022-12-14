@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: store
+      POSTGRES_USER: admin_store_db
+      POSTGRES_PASSWORD: St0r4*node
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: glcdmx@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: pgadminweb
+    ports:
+      - 80:80
+    links:
+      - postgres
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
+volumes:
+  postgres-data:
+  pgadmin-data:
