@@ -1,11 +1,12 @@
 {
   "name": "api-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "API Node example",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "start":"node"
   },
   "keywords": [],
   "author": "Gustavo Leyte-Vidal <glcdmx@gmail.com>",
