@@ -11,5 +11,9 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   plugins: ['prettier'],
-  rules: {},
+  rules: {
+    'eslint-disable no-empty-function': off,
+    'eslint-disable no-useless-constructor': off,
+    'eslint-disable class-methods-use-this': off,
+  },
 };
