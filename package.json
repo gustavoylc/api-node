@@ -6,7 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon",
-    "start":"node"
+    "start":"node",
+    "make:migration": "sequelize-cli migration:generate --name",
+    "make:seed": "sequelize-cli db:seed",
+    "make:model": "sequelize-cli model:generate --name",
+    "make:seeder":"sequelize-cli seed:generate --name",
+    "migrate": "sequelize-cli db:migrate",
+    "seed": "sequelize-cli db:seed:all",
+    "migrate:revert": "sequelize-cli db:migrate:undo",
+    "seed:revert": "sequelize-cli db:seed:undo",
+    "migrate:reset": "sequelize-cli db:migrate:undo:all",
+    "seed:reset": "sequelize-cli db:seed:undo:all"
   },
   "keywords": [],
   "author": "Gustavo Leyte-Vidal <glcdmx@gmail.com>",
