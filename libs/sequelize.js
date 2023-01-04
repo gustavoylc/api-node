@@ -15,7 +15,15 @@ if (config.prod) {
     },
   };
 }
-const sequelize = new Sequelize(databaseUrl, options);
-setupModels(sequelize);
+let sequelize = null;
 
-module.exports = sequelize;
+function setupDatabase(optionsDb) {
+  if (!sequelize) {
+    sequelize = new Sequelize(databaseUrl, optionsDb);
+  }
+  return sequelize;
+}
+
+setupModels(setupDatabase(options));
+
+module.exports = setupModels;
