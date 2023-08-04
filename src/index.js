@@ -10,6 +10,8 @@ const {
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.disable('x-powered-by');
+
 app.use(express.json());
 const whitelist = ['http://localhost:8080', 'https://myapp.com'];
 const options = {
